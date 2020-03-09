@@ -32,12 +32,22 @@ To get started, first install `bazel` following instructions [here](https://docs
 
 This script runs evolutionary search on 10 linear tasks (*T<sub>search</sub>* in the paper). After each experiment, it evaluates the best algorithm discovered on 100 new linear tasks (*T<sub>select</sub>* in the paper). Once an algorithm attains a fitness (1 - RMS error) greater than 0.9999, it is selected for a final evaluation on 100 *unseen tasks*. To conclude, the demo prints the results of the final evaluation and shows the code for the automatically discovered algorithm.
 
-For the purposes of this demo, we use a much smaller search space: only the operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover code similar to linear regression by gradient descent in under 5 minutes using 1 CPU (Note that the runtime may vary due to the random seeds and hardware). We saw similar discoveries in the unconstrained search space, although at a higher compute costs. 
+For the purposes of this demo, we use a much smaller search space: only the math operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover proograms similar to linear regression by gradient descent in under 5 minutes using 1 CPU (Note that the runtime may vary due to the random seeds and hardware). We saw similar discoveries in the unconstrained search space, although at a higher compute costs. 
 
-Compare that with the solution from a human ML researcher (one of the authors):
+Compare the automatically discovered algorithm with the solution from a human ML researcher (one of the authors):
 
 ```
-TODO(ereal): write linear regression algorithm.
+def Setup():
+  s1 = 0.001
+  
+def Predict():
+  s2 = dot(v0, v1)
+
+def Learn():
+  s3 = s0 - s2
+  s4 = s3 * s1
+  v2 = v0 * s4
+  v1 = v1 + v2
 ```
 
 In this human-designed case, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent.
