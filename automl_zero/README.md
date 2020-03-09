@@ -11,7 +11,7 @@ AutoML-Zero aims at automatically discovering computer programs to solve machine
 
 ![GIF for the experiment progress](progress.gif)
 
-The figure above shows a sequence of discoveries. Despite the challenging search space for AutoML-Zero, our experiments showed promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity.  More importantly, the evolved algorithms can be interpreted. Below is an example analysis of the best evolved algorithm, which "invents" techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs.
+The figure above shows an example sequence of discoveries. Despite the challenging search space for AutoML-Zero, our experiments showed promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. More importantly, the evolved algorithms can be *interpreted*. Below is an example analysis of the best evolved algorithm, which "invents" techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs.
 
 ![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
 
