@@ -1,7 +1,6 @@
 # AutoML-Zero
 
 Open source code for the paper: \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
-*E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
 | [Introduction](#what-is-automl-zero) | [Quick Demo](#5-minute-demo-discovering-linear-regression-from-scratch)| [Reproducing Search Baselines](#reproducing-search-baselines) |
 |-|-|-|
