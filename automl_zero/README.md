@@ -11,11 +11,11 @@ AutoML-Zero aims at automatically discovering computer programs to solve supervi
 
 ![GIF for the experiment progress](progress.gif)
 
-The figure above shows an example sequence of discoveries on binary classification tasks extracted from CIFAR-10. Despite the challenging search space presented by AutoML-Zero, our paper shows promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. 
+The figure above shows an example sequence of discoveries on binary classification tasks extracted from CIFAR-10. Despite the challenging search space presented by AutoML-Zero, our paper shows promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. More importantly, the evolved algorithms can be interpreted, which is shown below:
 
 ![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
 
-The figure above shows the best evolved algorithm, which performs better than logistic regression or two-layer fully connected neural networks, even when evaluating on other datasets. Most importantly, the evolved code is *interpretable*. Our paper analyzes the best evolved algorithm and finds that it applies techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs, which is shown above.
+The figure above analyzes the best evolved algorithm, which can be interpreted: our paper analyzes the best evolved algorithm and finds that it applies techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs, which is shown above.
 
 The goal of AutoML-Zero is to simultaneously search for all aspects of an ML algorithm (e.g., the model structure, the learning strategy, and the data augmentation), while employing *minimal human bias*. In our framework, an algorithm is represented as a triplet of component functions called ```Setup```, ```Predict```, and ```Learn```. To evaluate an algorithm, the ```Setup``` function is executed once at the beginning, the ```Predict``` and ```Learn``` functions are then executed once for each training example, and finally the ```Predict``` is executed once for each validation example to generate the predictions. All the instructions in the three functions are evolved: instructions can be inserted or removed, their arguments and output variables can be altered, and the operations used to combine those arguments can be modified. We also allow a variable number of instructions. 
 
