@@ -34,7 +34,7 @@ This script runs evolutionary search on 10 linear tasks (*T<sub>search</sub>* in
 
 For the purposes of this demo, we use a much smaller search space: only the math operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover programs similar to linear regression by gradient descent in under 5 minutes using 1 CPU (Note that the runtime may vary due to the random seeds and hardware). We saw similar discoveries in the unconstrained search space, although at a higher compute costs. 
 
-Compare the automatically discovered algorithm with the solution from a human ML researcher (one of the authors):
+You can compare the automatically discovered algorithm with the solution from a human ML researcher (one of the authors):
 
 ```
 def Setup():
@@ -50,7 +50,7 @@ def Learn():
   v1 = v1 + v2
 ```
 
-In this human-designed case, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent.
+In this human designed program, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent.
 
 &nbsp;
 
