@@ -28,7 +28,7 @@ To get started, first install `bazel` following instructions [here](https://docs
 
 ```
 git clone https://github.com/google-research/google-research.git
-cd google_research/automl_zero
+cd google-research/automl_zero
 ./run_demo.sh
 ```
 
