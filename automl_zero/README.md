@@ -8,7 +8,7 @@ This directory contains the open-sourced code for the paper:
 | Section | Description |
 |-|-|
 | [Introduction](#what-is-automl-zero) | What is AutoML-Zero |
-| [Quick Demo](#) | 5-Minute Demo: Rediscovering Linear Regression from Scratch |
+| [Quick Start](#) | 5-Minute Demo: Discovering Linear Regression from Scratch |
 | [Reproducing Search baselines](#reproducing-search-baselines) | Reproducing Search Baselines from the paper |
 
 &nbsp;
