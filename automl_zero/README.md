@@ -4,13 +4,6 @@ This directory contains the open source code for the paper:
 
 \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" *E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
-| | |
-|-|-|
-| [Introduction](#what-is-automl-zero) | What is AutoML-Zero |
-| [Quick Start](#) | 5-Minute Demo: Discovering Linear Regression from Scratch |
-| [Reproducing Search baselines](#reproducing-search-baselines) | Reproducing Search Baselines from the paper |
-
-
 ## What is AutoML-Zero
 
 AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. Despite the large search space, the evolutionary search demonstrates promising results by discovering linear regression, 2-layer fully connected neural networks with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. Below is an example of a sequence of discoveries using binary classification tasks extracted from CIFAR-10: ![GIF for the experiment progress](progress.gif)
