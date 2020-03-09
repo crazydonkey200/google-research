@@ -15,7 +15,7 @@ Despite the challenging search space for AutoML-Zero, *Evolutionary Search* show
 
 ![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
 
-Note that the algorithms shown above are already simplified and reordered for better readability. The raw codes, and the details about more experiments and analyses can be found in the [paper](https://github.com/google-research/google-research/tree/master/automl_zero).
+Note that the programs shown above are already simplified and reordered for better readability. The raw programs, and the details about more experiments and analyses can be found in the [paper](https://github.com/google-research/google-research/tree/master/automl_zero).
 
 
 &nbsp;
