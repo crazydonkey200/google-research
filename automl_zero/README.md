@@ -7,7 +7,7 @@ Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algo
 
 ## What is AutoML-Zero?
 
-AutoML-Zero aims at automatically discovering computer programs to solve machine learning tasks, starting from empty or random programs and using only basic math operations. The goal is to simultaneously search for all aspects of an ML algorithm (e.g., the model structure and the learning strategy), while employing *minimal human bias*. Despite the challenging search space for AutoML-Zero, evolutionary search showed promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. An example sequence of discoveries is shown below.  
+AutoML-Zero aims at automatically discovering computer programs to solve machine learning tasks, starting from empty or random programs and using only basic math operations. The goal is to simultaneously search for all aspects of an ML algorithm (e.g., the model structure and the learning strategy), while employing *minimal human bias*. Despite the challenging search space for AutoML-Zero, *Evolutionary Search* showed promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. An example sequence of discoveries is shown below.  
 
 ![GIF for the experiment progress](progress.gif)
 
