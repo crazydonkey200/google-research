@@ -35,7 +35,7 @@ cd google-research/automl_zero
 
 This script runs evolutionary search on 10 linear tasks (*T<sub>search</sub>* in the paper). After each experiment, it evaluates the best algorithm discovered on 100 new linear tasks (*T<sub>select</sub>* in the paper). Once an algorithm attains a fitness (1 - RMS error) greater than 0.9999, it is selected for a final evaluation on 100 *unseen tasks*. To conclude, the demo prints the results of the final evaluation and shows the code for the automatically discovered algorithm.
 
-To make this demo quick, we use a much smaller search space: only the math operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover programs similar to linear regression by gradient descent in under 5 minutes using 1 CPU (Note that the runtime may vary due to the random seeds and hardware). We saw similar discoveries in the unconstrained search space, although at a higher compute costs.
+To make this demo quick, we use a much smaller search space: only the math operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover programs similar to linear regression by gradient descent in under 5 minutes using 1 CPU (Note that the runtime may vary due to the random seeds and hardware). We have seen similar discoveries and more in the unconstrained search space (see more details in the [paper](https://github.com/google-research/google-research/tree/master/automl_zero#automl-zero)).
 
 You can compare the automatically discovered algorithm with the solution from a human ML researcher (one of the authors):
 
