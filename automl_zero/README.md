@@ -11,7 +11,7 @@ AutoML-Zero aims at automatically discovering computer programs to solve machine
 
 ![GIF for the experiment progress](progress.gif)
 
-More importantly, the evolved algorithms can be *interpreted*. Below is an example analysis of the best evolved algorithm, which "invents" techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs.
+More importantly, the evolved algorithms can be *interpreted*. Below is an analysis of the best evolved algorithm, which "invents" techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs.
 
 ![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
 
