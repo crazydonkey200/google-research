@@ -2,14 +2,14 @@
 
 This directory contains the open source code for the paper:
 
-\"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
-*E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
+\"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" *E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
-| Section | Description |
+| | |
 |-|-|
 | [Introduction](#what-is-automl-zero) | What is AutoML-Zero |
 | [Quick Start](#) | 5-Minute Demo: Discovering Linear Regression from Scratch |
 | [Reproducing Search baselines](#reproducing-search-baselines) | Reproducing Search Baselines from the paper |
+
 
 ## What is AutoML-Zero
 
