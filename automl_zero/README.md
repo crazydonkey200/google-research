@@ -1,4 +1,4 @@
-# AutoML-Zero Open-Sourced Code
+# AutoML-Zero
 
 Open source code for the paper: \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
 *E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
