@@ -41,16 +41,16 @@ You can compare the automatically discovered algorithm with the solution from a 
 
 ```
 def Setup():
-  s1 = 0.001
+  s2 = 0.001  # Init learning rate.
   
-def Predict():
-  s2 = dot(v0, v1)
+def Predict():  # v0 = features
+  s1 = dot(v0, v1)  # Apply weights
 
-def Learn():
-  s3 = s0 - s2
-  s4 = s3 * s1
-  v2 = v0 * s4
-  v1 = v1 + v2
+def Learn():  # v0 = features; s0 = label
+  s3 = s0 - s1  # Compute error.
+  s4 = s3 * s1  # Apply learning rate.
+  v2 = v0 * s4  # Compute gradient.
+  v1 = v1 + v2  # Update weights.
 ```
 
 In this human designed program, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent. You might have noticed that the evolved programs may order the instructions very differently and usually contain many redundant instructions, which can make it challenging to interpret. See more details about how we address these problems in the [paper](https://github.com/google-research/google-research/tree/master/automl_zero#automl-zero).
