@@ -57,12 +57,12 @@ In this human designed program, the ```Setup``` function establishes a learning 
 
 ## Reproducing Search Baselines
 
-The following command can be used to reproduce the results in Supplementary
+First install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html),then run the following command to reproduce the results in Supplementary
 Section 9 ("Baselines") with the "Basic" method on 1 process (1 CPU):
 
 *[To be continued, ETA: March, 2020]*
 
-If you want to use more than 1 process, you will need to code a way to
+If you want to use more than 1 process, you will need to create your own implementation to 
 parallelize the computation based on your particular distributed-computing
 platform. A platform-agnostic description of what we did is given in our paper.
 
