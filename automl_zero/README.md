@@ -11,8 +11,6 @@ This directory contains the open-sourced code for the paper:
 | [Quick Start](#) | 5-Minute Demo: Discovering Linear Regression from Scratch |
 | [Reproducing Search baselines](#reproducing-search-baselines) | Reproducing Search Baselines from the paper |
 
-&nbsp;
-
 ## What is AutoML-Zero
 
 AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. In other words, the goal is to simultaneously searches for all aspects of an ML algorithm (e.g., the model structure, the learning strategy and the data augmentation), while employing *minimal human bias*. Despite the large search space, the evolutionary search demonstrates promising results by discovering linear regression, 2-layer fully connected neural networks with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. Below is an example of a sequence of discoveries using binary classification tasks extracted from CIFAR-10:
