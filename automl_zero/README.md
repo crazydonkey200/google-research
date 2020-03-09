@@ -5,8 +5,6 @@ This directory contains the open-sourced code for the paper:
 \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
 *Esteban Real\*, Chen Liang\*, David R. So, and Quoc V. Le. \(\*equal contribution)*
 
-&nbsp;
-
 | Section | Description |
 |-|-|
 | [Introduction](#evolving-algorithms-with-minimal-human-bias) | Introducing AutoML-Zero |
