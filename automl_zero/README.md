@@ -1,6 +1,6 @@
 # AutoML-Zero
 
-Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\](https://github.com/google-research/google-research/tree/master/automl_zero)"
+Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**](https://github.com/google-research/google-research/tree/master/automl_zero)"
 
 | [Introduction](#what-is-automl-zero) | [Quick Demo](#5-minute-demo-discovering-linear-regression-from-scratch)| [Reproducing Search Baselines](#reproducing-search-baselines) |
 |-|-|-|
