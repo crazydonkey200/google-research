@@ -7,6 +7,12 @@ This directory contains the open-sourced code for the paper:
 
 &nbsp;
 
+| Section | Description |
+|-|-|
+| [Introduction](#evolving-algorithms-with-minimal-human-bias) | Introducing AutoML-Zero |
+| [Quick Demo](#) | Quick 5-Minute Demo: Rediscovering Linear Regression from Scratch |
+| [Reproducing baselines](#reproducing-baselines) | Reproducing Baselines presented in paper |
+
 ## Evolving Algorithms with Minimal Human Bias
 
 The paper presents experiments that automatically discover computer programs to solve machine learning tasks. Starting from empty or random programs and using only basic mathematical operations as building blocks, the evolutionary search method discovers linear regression, 2-layer fully connected neural networks, bilinear models, and the like. Backpropagation by gradient descent is discovered simultaneously as a way to train the models when the search process is made to evaluate on *multiple* tasks. In other words, searching the AutoML-Zero space discovers not only these simple architectures, but also the learning algorithm.
