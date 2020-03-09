@@ -21,28 +21,26 @@ The figure above shows an example sequence of discoveries. Despite the challengi
 
 ## 5-Minute Demo: Discovering Linear Regression From Scratch
 
-Considering the problem of linear regression provides a miniature version of the experiments in the paper. Confronted with this problem, a human designer might write the following algorithm:
+As a miniature "AutoML-Zero" experiment, let's try to automatically discover programs to solve linear regression tasks. 
+
+To get started, first install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html), then run the demo with:
+
+```
+./run_demo.sh
+```
+
+
+To answer this question, you can try the script below. It applies an experimental paradigm similar to that of our paper. The paradigm is to run evolution experiments on 10 linear *search tasks* (see paper). After each experiment, it evaluates the best algorithm discovered on 100 *selection tasks*. Once an algorithm attains a fitness (1 - RMS error) greater than 0.9999, it is selected for a final evaluation on 100 *unseen tasks*. To conclude, the demo prints the results of this one-time final evaluation and shows the code for the corresponding algorithm.
+
+For the purposes of this demo, we use a much smaller search space: only the operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover code similar to linear regression by gradient descent in under 5 minutes using 1 CPU (Note that the runtime may vary due to the random seeds and hardware). We saw similar discoveries in the unconstrained search space, although at a higher compute costs. 
+
+Compare that with the solution from a human ML researcher (one of the authors):
 
 ```
 TODO(ereal): write linear regression algorithm.
 ```
 
 In this human-designed case, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent.
-
-*Can an evolutionary search discover linear regression?*
-
-To answer this question, you can try the script below. It applies an experimental paradigm similar to that of our paper. The paradigm is to run evolution experiments on 10 linear *search tasks* (see paper). After each experiment, it evaluates the best algorithm discovered on 100 *selection tasks*. Once an algorithm attains a fitness (1 - RMS error) greater than 0.9999, it is selected for a final evaluation on 100 *unseen tasks*. To conclude, the demo prints the results of this one-time final evaluation and shows the code for the corresponding algorithm.
-
-For the purposes of this demo, we use a much smaller search space: only the operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover code similar to linear regression by gradient descent in under 5 minutes using 1 CPU.
-
-First install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html), then run the demo with:
-
-```
-./run_demo.sh
-```
-
-Repeated runs will use different random seeds. Note that the runtime may vary
-widely due to the random initial conditions and hardware.
 
 &nbsp;
 
