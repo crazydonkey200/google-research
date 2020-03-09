@@ -2,7 +2,7 @@
 
 This directory contains the open source code for the paper:
 
-\"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" 
+\"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
 *E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
 ## What is AutoML-Zero
