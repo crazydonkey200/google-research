@@ -3,7 +3,7 @@
 Open source code for the paper: \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
 *E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
-| [Introduction](#what-is-automl-zero) | [Quick Start](#5-minute-demo-rediscovering-linear-regression-from-scratch)| [Reproducing Search baselines](#reproducing-search-baselines) |
+| [Introduction](#what-is-automl-zero) | [Quick Start](#5-minute-demo-discovering-linear-regression-from-scratch)| [Reproducing Search baselines](#reproducing-search-baselines) |
 |-|-|-|
 
 ## What is AutoML-Zero?
@@ -17,7 +17,7 @@ In our framework, an algorithm is represented as a triplet of component function
 
 &nbsp;
 
-## 5-Minute Demo: Rediscovering Linear Regression From Scratch
+## 5-Minute Demo: Discovering Linear Regression From Scratch
 
 Considering the problem of linear regression provides a miniature version of the experiments in the paper. Confronted with this problem, a human designer might write the following algorithm:
 
