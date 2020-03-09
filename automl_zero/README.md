@@ -2,8 +2,8 @@
 
 Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**](https://github.com/google-research/google-research/tree/master/automl_zero)"
 
-| [Introduction](#what-is-automl-zero) | [Quick Demo](#5-minute-demo-discovering-linear-regression-from-scratch)| [Reproducing Search Baselines](#reproducing-search-baselines) |
-|-|-|-|
+| [Introduction](#what-is-automl-zero) | [Quick Demo](#5-minute-demo-discovering-linear-regression-from-scratch)| [Reproducing Search Baselines](#reproducing-search-baselines) | [Citation](#citation) |
+|-|-|-|-|
 
 ## What is AutoML-Zero?
 
@@ -57,6 +57,12 @@ platform. A platform-agnostic description of what we did is given in our paper.
 We left out of this directory upgrades for the "Full" method that are
 pre-existing (hurdles) but included those introduced in this paper (e.g. FEC
 for ML algorithms).
+
+## Citation
+
+If you use the code in your research, please cite:
+
+`TODO`
 
 &nbsp;
 
