@@ -33,7 +33,7 @@ To answer this question, you can try the script below. It applies an experimenta
 
 For the purposes of this demo, we use a much smaller search space: only the operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover code similar to linear regression by gradient descent in under 5 minutes using 1 CPU.
 
-First install `bazel` following instructions here, then run the demo with:
+First install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html), then run the demo with:
 
 ```
 ./run_demo.sh
