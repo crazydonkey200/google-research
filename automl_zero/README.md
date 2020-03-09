@@ -7,11 +7,11 @@ Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algo
 
 ## What is AutoML-Zero?
 
-AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. 
+AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. The goal is to simultaneously search for all aspects of an ML algorithm (e.g., the model structure, the learning strategy and the data augmentation), while employing *minimal human bias*.
 
 ![GIF for the experiment progress](progress.gif)
 
-The figure above shows a sequence of discoveries on binary classification tasks extracted from CIFAR-10. Despite the challenging search space for AutoML-Zero, our experiments showed promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity.  More importantly, the evolved algorithms can be interpreted. Below is an example analysis of the best evolved algorithm, which "invents" techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs.
+The figure above shows a sequence of discoveries. Despite the challenging search space for AutoML-Zero, our experiments showed promising results by discovering linear regression, 2-layer neural network with backpropagation, and even algorithms better than hand designed baselines of comparable complexity.  More importantly, the evolved algorithms can be interpreted. Below is an example analysis of the best evolved algorithm, which "invents" techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs.
 
 ![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
 
