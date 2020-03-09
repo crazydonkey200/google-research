@@ -3,55 +3,48 @@
 This directory contains the open-sourced code for the paper:
 
 \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
-*Esteban Real\*, Chen Liang\*, David R. So, and Quoc V. Le. \(\*equal contribution)*
+*E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
 | Section | Description |
 |-|-|
-| [Introduction](#evolving-algorithms-with-minimal-human-bias) | Introducing AutoML-Zero |
-| [Quick Demo](#) | Quick 5-Minute Demo: Rediscovering Linear Regression from Scratch |
-| [Reproducing baselines](#reproducing-baselines) | Reproducing Baselines presented in paper |
-
-## Evolving Algorithms with Minimal Human Bias
-
-The paper presents experiments that automatically discover computer programs to solve machine learning tasks. Starting from empty or random programs and using only basic mathematical operations as building blocks, the evolutionary search method discovers linear regression, 2-layer fully connected neural networks, bilinear models, and the like. Backpropagation by gradient descent is discovered simultaneously as a way to train the models when the search process is made to evaluate on *multiple* tasks. In other words, searching the AutoML-Zero space discovers not only these simple architectures, but also the learning algorithm.
-
-For example, one of our experiments evaluates on binary classification tasks extracted CIFAR-10. It produces the following sequence of discoveries:
-
-![experiment progress](progress.gif)
-
-In other words, AutoML-Zero aims to simultaneously search for all aspects of an ML algorithm, including the architecture, the data augmentation, and the learning strategy, all the while employing *minimal human bias*. To minimize biasing the results in favor of human-discovered ideas, we search over large sparse spaces that have not been heavily designed, using fine-grained components (e.g. 58 basic mathematical ops) and imposing minimal restrictions on form&mdash;i.e directly evolving the code. As an example of the code, here are the initial algorithm and the best algorithm discovered by the experiment above:
-
-![initial and evolved code](best_algo.gif)
-
-There are few restrictions in that every instruction inside each of the three component functions above is free to change during the search: instructions can be inserted or removed, their arguments and output variables can be modified, and the operations used to combine those arguments can be altered. We even allow a variable number of instructions. This code performs better than hand-designs of comparable complexity, such as logistic regressors or two-layer preceptrons. This remains the case even after transferring to other datasets like SVHN or down-sampled ImageNet. Most importantly, the evolved code is *interpretable*: our paper analyzes this model in terms of multiplicative interactions, gradient descent, and similar concepts.
-
+| [Introduction](#what-is-automl-zero) | What is AutoML-Zero |
+| [Quick Demo](#) | 5-Minute Demo: Rediscovering Linear Regression from Scratch |
+| [Reproducing Search baselines](#reproducing-search-baselines) | Reproducing Search Baselines from the paper |
 
 &nbsp;
 
-## Quick 5-Minute Demo: Rediscovering Linear Regression from Scratch
+## What is AutoML-Zero
 
-As a quick demo, we provide a script that runs a
-local evolution experiment to search for algorithms that can solve multiple linear tasks. Typically, it will discover linear regression by gradient descent in under 5 minutes using 1 CPU.
+AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. In other words, the goal is to simultaneously searches for all aspects of an ML algorithm (e.g., the model structure, the learning strategy and the data augmentation), while employing *minimal human bias*. Despite the large search space, the evolutionary search demonstrates promising results by discovering linear regression, 2-layer fully connected neural networks with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. Below is an example of a sequence of discoveries using binary classification tasks extracted from CIFAR-10:
 
-To reduce resource usage, we simplified the setting: the code is restricted to short programs of fixed length and the allowed ops are only those necessary for a linear regressor (i.e. a much smaller search space than most of the paper).
+![GIF for the experiment progress]](progress.gif)
 
-The demo will run short evolution experiments in succession on the *search
-tasks* (see paper) and evaluate the best algorithm discovered by each
-experiment on the *selection tasks*. Once an algorithm attains a
-fitness (1 - RMS error) greater than 0.9999, it is selected for a final
-evaluation on unseen data. To conclude, the demo prints the results of this
-one-time final evaluation and shows the code for the corresponding algorithm.
+In our framework, an algorithm is represented as a triplet of component functions called ```Setup```, ```Predict```, and ```Learn```, as seen above. To evaluate an algorithm, the ```Setup``` function is executed once at the beginning, and the ```Predict``` and ```Learn``` functions are then executed once for each example. All the instructions in the three functions are evolved: instructions can be inserted or removed, their arguments and output variables can be modified, and the operations used to combine those arguments can be altered. We also allow a variable number of instructions. This code performs better than hand designed baselines of comparable complexity, such as logistic regression or two-layer fully connected neural networks. This remains the case even after transferring to other datasets. Most importantly, the evolved code is *interpretable*: our paper analyzes the best evolved algorithm and find that it employs techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs. As an example, we show the interpretation of the best evolved algorithm from the above experiment:
 
-Please install with:
+![GIF for the interpretation of the best evolved algorithm](best_algo.gif)
 
-```
-TODO(crazydonkey): add command lines.
-```
+&nbsp;
 
-and run with:
+## 5-Minute Demo: Rediscovering Linear Regression From Scratch
+
+Considering the problem of linear regression provides a miniature version of the experiments in the paper. Confronted with this problem, a human designer might write the following algorithm:
 
 ```
-TODO(crazydonkey): add command lines.
+TODO(ereal): write linear regression algorithm.
+```
+
+In this human-designed case, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent.
+
+*Can an evolutionary algorithm also discover linear regression and gradient descent?*
+
+To answer this question, you can try the script below. It applies an experimental paradigm similar to that of our paper. The paradigm is to run evolution experiments on 10 linear *search tasks* (see paper). After each experiment, it evaluates the best algorithm discovered on 100 *selection tasks*. Once an algorithm attains a fitness (1 - RMS error) greater than 0.9999, it is selected for a final evaluation on 100 *unseen tasks*. To conclude, the demo prints the results of this one-time final evaluation and shows the code for the corresponding algorithm.
+
+For the purposes of this demo, we use a much smaller search space: only the operations necessary to implement linear regression are allowed and the programs are constrained to a short, fixed length. This way, the demo will typically discover code similar to linear regression by gradient descent in under 5 minutes using 1 CPU.
+
+First install `bazel` following instructions here, then run the demo with:
+
+```
+./run_demo.sh
 ```
 
 Repeated runs will use different random seeds. Note that the runtime may vary
@@ -59,7 +52,7 @@ widely due to the random initial conditions and hardware.
 
 &nbsp;
 
-## Reproducing Baselines
+## Reproducing Search Baselines
 
 The following command can be used to reproduce the results in Supplementary
 Section 9 ("Baselines") with the "Basic" method on 1 process (1 CPU):
