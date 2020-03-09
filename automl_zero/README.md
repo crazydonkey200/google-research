@@ -3,9 +3,13 @@
 Open source code for the paper: \"**AutoML-Zero: Evolving Machine Learning Algorithms From Scratch**\" \
 *E Real\*, C Liang\*, DR So, and QV Le \(\*equal contribution)*
 
+| [Introduction](#what-is-automl-zero) | [Quick Start](#)| [Reproducing Search baselines](#reproducing-search-baselines) |
+|-|-|-|
+
+
 ## What is AutoML-Zero
 
-AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. Despite the large search space, our experiments demonstrate promising results by discovering linear regression, 2-layer fully connected neural networks with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. Below is an example of a sequence of discoveries using binary classification tasks extracted from CIFAR-10: 
+AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic mathematical operations as building blocks. Despite the large search space, our paper shows promising results by discovering linear regression, 2-layer fully connected neural networks with backpropagation, and even algorithms better than hand designed baselines of comparable complexity. Below is an example of a sequence of discoveries using binary classification tasks extracted from CIFAR-10: 
 ![GIF for the experiment progress](progress.gif)
 
 In our framework, an algorithm is represented as a triplet of component functions called ```Setup```, ```Predict```, and ```Learn```. To evaluate an algorithm, the ```Setup``` function is executed once at the beginning, the ```Predict``` and ```Learn``` functions are then executed once for each training example, and finally the ```Predict``` is executed once for each validation example to generate the predictions. All the instructions in the three functions are evolved: instructions can be inserted or removed, their arguments and output variables can be altered, and the operations used to combine those arguments can be modified. We also allow a variable number of instructions. The best evolved algorithm performs better than hand designed baselines of comparable complexity, e.g., logistic regression or two-layer fully connected neural networks, even when evaluating on other datasets. Most importantly, the evolved code is *interpretable*. Our paper analyzes the best evolved algorithm and finds that it applies techniques like bilinear interactions, weight averaging, normalized gradient and adding noise to inputs, which is shown below:
