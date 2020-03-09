@@ -51,7 +51,7 @@ def Learn():
   v1 = v1 + v2
 ```
 
-In this human designed program, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent. Note that the evolved programs may order the instructions very differently and usually contain many redundant instructions, which can make it challenging to interpret. See more details about how we address these problems in the [paper](https://github.com/google-research/google-research/tree/master/automl_zero#automl-zero).
+In this human designed program, the ```Setup``` function establishes a learning rate, the ```Predict``` function applies a set of weights to the inputs, and the ```Learn``` function corrects the weights in the opposite direction to the gradient. In other words, a linear regressor trained with gradient descent. You might have noticed that the evolved programs may order the instructions very differently and usually contain many redundant instructions, which can make it challenging to interpret. See more details about how we address these problems in the [paper](https://github.com/google-research/google-research/tree/master/automl_zero#automl-zero).
 
 &nbsp;
 
