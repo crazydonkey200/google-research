@@ -7,7 +7,7 @@ Open source code for the paper: \"[**AutoML-Zero: Evolving Machine Learning Algo
 
 ## What is AutoML-Zero?
 
-AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic math operations. The goal is to simultaneously search for all aspects of an ML algorithm (e.g., the model structure, the learning strategy and the data augmentation), while employing *minimal human bias*.
+AutoML-Zero aims at automatically discovering computer programs to solve supervised machine learning tasks, starting from empty or random programs and using only basic math operations. The goal is to simultaneously search for all aspects of an ML algorithm (e.g., the model structure and the learning strategy), while employing *minimal human bias*.
 
 ![GIF for the experiment progress](progress.gif)
 
