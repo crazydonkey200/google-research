@@ -24,7 +24,7 @@ More examples, analysis, and details can be found in the [paper](https://arxiv.o
 
 As a miniature "AutoML-Zero" experiment, let's try to automatically discover programs to solve linear regression tasks.
 
-To get started, first install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html) (bazel>=2.2.0 and C++>=14 are required), then run the demo with:
+To get started, first install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html) (bazel>=2.2.0 and g++>=9 are required), then run the demo with:
 
 ```
 git clone https://github.com/google-research/google-research.git
@@ -58,16 +58,30 @@ In this human designed program, the ```Setup``` function establishes a learning 
 
 ## Reproducing Search Baselines
 
-First install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html) (bazel>=2.2.0 and C++>=14 are required),then run the following command to reproduce the results in Supplementary
-Section 9 ("Baselines") with the "Basic" method on 1 process (1 CPU):
+First install `bazel` following instructions [here](https://docs.bazel.build/versions/master/install.html) (bazel>=2.2.0 and g++>=9 are required),then follow the instructions below to reproduce the results in Supplementary
+Section 9 ("Baselines") with the "Basic" method on 1 process (1 CPU).
 
-*[To be continued, ETA: March, 2020]*
+First, generate the projected binary CIFAR10 datasets by running
+
+```
+python generate_datasets.py --data_dir=binary_cifar10_data
+```
+
+It would take ~1 hrs to download and preprocess all the data.
+
+Then, start the baseline experiment by running
+
+```
+./run_baseline.sh
+```
+It would take 12-18 hrs to finish depending on the hardware. You can change the random seed in
+`run_baseline.sh` to estimate the variance.
 
 If you want to use more than 1 process, you will need to create your own implementation to
 parallelize the computation based on your particular distributed-computing
 platform. A platform-agnostic description of what we did is given in our paper.
 
-We left out of this directory upgrades for the "Full" method that are
+Note we left out of this directory upgrades for the "Full" method that are
 pre-existing (hurdles) but included those introduced in this paper (e.g. FEC
 for ML algorithms).
 
@@ -75,7 +89,14 @@ for ML algorithms).
 
 If you use the code in your research, please cite:
 
-`TODO`
+```
+@article{real2020automl,
+  title={AutoML-Zero: Evolving Machine Learning Algorithms From Scratch},
+  author={Real, Esteban and Liang, Chen and So, David R and Le, Quoc V},
+  journal={arXiv preprint arXiv:2003.03384},
+  year={2020}
+}
+```
 
 &nbsp;
 
